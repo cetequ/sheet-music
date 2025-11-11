@@ -6,44 +6,55 @@
 \score { 
   \transpose e c
 << % Lead Sheet to combine chords, notes and lyrics
+  
   \chords {
   \override ChordName.color = #white
   r2
   \revert ChordName.color
   fis\breve:m e\breve fis\breve:m fis2:m e2 fis1:m
-  fis\breve:m e\breve fis\breve:m fis2:m e2 fis1 fis1
+  fis\breve:m e\breve fis\breve:m fis2:m e2 fis1:m
+  fis\breve:m e\breve fis\breve:m fis2:m e2 fis1:m
   }
+
   \relative c' {
     \tempo 4 = 120
     \time 4/4
     \key e \major
       \partial 2
-        r8 r16 cis'16 cis8. b16 |
-      \repeat volta 8 {
+        r8 r16 cis'16^\markup { \italic "Verse 1" } cis8. b16 |
         cis2 fis,4 a8. b16 | cis8. cis16 cis8. a16 fis4 cis'8. a16 |
         b2 e,4 gis8. a16 | b8. b16 b8. gis16 e4 a8. b16 |
         cis2 fis,4 a8. b16 | cis8. cis16 cis8. a16 fis4 a8. b16 |
-        cis4 b a gis | fis r4 a b |
-        cis4.. a16 fis2 | cis'8. cis16 cis8. a16 fis4 cis'4 |
+        cis4 b a gis | fis2 r4 \bar "" \break
+
+        a8.^\markup { \italic "Verse 2" } b16 | cis8. cis16 cis8. a16 fis4 a8. b16 | cis8. cis16 cis8. a16 fis4 cis'8. a16 |
+        b8. b16 b8. gis16 e4 gis8. a16 | b8. b16 b8. gis16 e4 a8. b16 |
+        cis8. cis16 cis8. a16 fis4 a8. b16 | cis8. cis16 cis8. a16 fis4 a8. b16 |
+        cis4 b a gis | fis2 \bar "" \break
+
+        a4^\markup { \italic "Chorus" } b | cis4.. a16 fis2 | cis'8. cis16 cis8. a16 fis4 cis'4 |
         b4.. gis16 e2 | b'8. b16 b8. gis16 e4 b' |
         cis4.. a16 fis2 | cis'8. cis16 cis8. a16 fis4 a8. b16 |
-        cis4 b a gis |
-      }
-      \alternative {
-        { fis2 r8 r16 fis16 a8. b16 }
-        { fis1 \bar "|."} }
-      }
-  
+        cis4 b a gis | fis1 \bar "|."
+  }
+
   \addlyrics {
   Oh we'd be all right if the wind was in our sails,
   we'd be all right if the wind was in our sails,
   we'd be all right if the wind was in our sails,
   and we'll all hang on be -- hind!
+
+And a drop of Nel -- son's blood woul -- dn't do us a -- ny harm
+  and a drop of Nel -- son's blood woul -- dn't do us a -- ny harm
+  and a drop of Nel -- son's blood woul -- dn't do us a -- ny harm
+  and we'll all hang on be -- hind!
+
   And we'll roll the old cha -- ri -- ot a -- long,
   we'll roll the old cha -- ri -- ot a -- long,
   we'll roll the old cha -- ri -- ot a -- long,
   and we'll all hang on be -- hind!
   }
+  
 >>
 
 \midi{}
@@ -53,9 +64,7 @@
 
 \markup{
   \wordwrap-string
-  "2. We'd be all right if we make it round the horn...
-
-  3. And a drop of Nelson's blood wouldn't do us any harm...
+  "3. We'd be all right if we make it round the horn...
   
   4. And a night on the town wouldn't do us any harm...
 
@@ -65,5 +74,9 @@
 
   7. And another swig of gin wouldn't do us any harm...
 
-  8. And a nice watch below wouldn't do us any harm..."
+  8. And a nice watch below wouldn't do us any harm...
+  
+  9. Oh, a plate of Irish stew wouldn't do us any harm...
+  
+  10. Oh, a night with the gals wouldn't do us any harm..."
 }
